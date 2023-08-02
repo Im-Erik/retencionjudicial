@@ -1,1 +1,49 @@
-<p>Navigation trabaja</p>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="toolbarmenu">      
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/IPS.png/662px-IPS.png" alt="imagen ips gobierno" width="235px" height="auto">             
+      </mat-toolbar>
+      <mat-nav-list>     
+        <a mat-list-item routerLink="home" routerLinkActive="active" class="lista"><mat-icon class="iconmenu">home</mat-icon>Inicio</a>
+        <a mat-list-item routerLink="control" routerLinkActive="active" class="lista"><mat-icon class="iconmenu">arrow_right_alt</mat-icon>Ingreso Solicitud</a>
+        <a mat-list-item routerLink="expediente" routerLinkActive="active" class="lista"><mat-icon class="iconmenu">group</mat-icon>Consulta Retenciones</a>
+        <a mat-list-item routerLink="planes" routerLinkActive="active" class="lista"><mat-icon class="iconmenu">date_range</mat-icon>Retenciones por periodo</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="navbar1">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+  
+        <div class="navbar0 mat-elevation-z5">
+          <div class="navbar2">
+            <div class="navbar2text">
+              <mat-icon class="username">group</mat-icon>Nombre Apellido <mat-icon class="login-icon">login</mat-icon>
+            </div>
+          </div>  
+                
+            <div class="navbar1text">
+              <span class="span1">Retenciones Judiciales</span>
+              <span class="span2">Instituto de Previsión Social / Chile Atiende</span>
+              <span class="span2">Retenciones Judiciales</span>
+            </div>
+        </div>
+  
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <!-- <app-dashboard-control-de-expedientes></app-dashboard-control-de-expedientes> -->
+      
+    <!-- <app-dashboard-home></app-dashboard-home> -->
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

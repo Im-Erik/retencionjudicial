@@ -2,3 +2,43 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+// lista de menu: Color, tamaño, alineacion
+span .mdc-list-item__primary-text{
+    color:#fff;   
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-mdc-list-base{
+    padding-top: 0 !important;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    width: 100%;
+    border-radius: 25px;
+  }
+
+  // Da estilo a cabecera de las tablas
+  .mat-mdc-header-cell{
+    background-color: #0062AD !important;
+    color: #fff;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  align-items: center;
+}
+
+.blueboton{
+  background-color: #0062AD !important;
+  height: 30px;
+  line-height: 15px !important;
+  margin-top: 10px;
+  }
